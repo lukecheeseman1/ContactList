@@ -9,6 +9,21 @@ var app = express();
 
 const route = require('./routes/route');
 
+//connect to mongoDB
+mongoose.connect('mongodb://localhost:27017/contactlist');
+
+//on connection 
+mongoose.connection.on('connected', () => {
+    console.log('Connected to database mongodb @ 27017');
+});
+
+//error
+mongoose.connection.on('error', (err) => {
+    if (err) {
+        console.log('error in database connection' + err);
+    }
+});
+
 //port no
 
 const port = 3000;
@@ -28,7 +43,7 @@ app.use('/api', route);
 //testing server
 app.get('/', (req, res) => {
     res.send('foobar')
-})
+});
 
 app.listen(port, () => {
     console.log('server started at port' + port);
