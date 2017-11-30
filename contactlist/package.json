@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/lukecheeseman1/ContactList#readme",
   "dependencies": {
+    "@angular/cli": "^1.5.5",
     "bluebird": "^3.5.1",
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
