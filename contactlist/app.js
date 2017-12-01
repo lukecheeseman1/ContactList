@@ -8,15 +8,17 @@ var Promise = require('bluebird');
 
 var app = express();
 
-
+var mongoDB = 'mongodb://LUKECHEESEMAN:Orang3isr3d123@ds157500.mlab.com:57500/contactlist';
+mongoose.connect(mongoDB, {
+    useMongoClient: true
+});
 
 const route = require('./routes/route');
 
 //connect to mongoDB
 mongoose.Promise = require('bluebird');
-mongoose.connect('mongodb://localhost:27017/contactlist', {
-    useMongoClient: true,
-});
+var mongodb = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 //on connection 
 mongoose.Promise = require('bluebird');

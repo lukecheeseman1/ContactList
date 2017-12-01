@@ -1,3 +1,37 @@
-<p>
-  contacts works!
-</p>
+<div class="container">
+    <h2>PHONE BOOK</h2>
+    <form>
+        <div class="form-group">
+            <label for="first_name">first Name</label>
+            <input type="text" class="form-control" id="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="last_name">Second Name</label>
+            <input type="text" class="form-control" id="alterEgo">
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="text" class="form-control" id="alterEgo">
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+
+    </form>
+</div>
+<hr>
+<div class="container">
+    <div *ngFor="let contact of contacts ">
+        <div class="col-md-3">
+            {{contact.first_name}}
+        </div>
+        <div class="col-md-3">
+            {{contact.last_name}}
+        </div>
+        <div class="col-md-3">
+            {{contact.phone}}
+        </div>
+        <div class="col-md-3">
+            <input type="button" (click)="deleteContact(contact._id)" value="Delete" class="btn btn-danger">
+        </div>
+    </div>
+</div>
