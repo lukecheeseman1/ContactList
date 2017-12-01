@@ -17,8 +17,8 @@ const route = require('./routes/route');
 
 //connect to mongoDB
 mongoose.Promise = require('bluebird');
-var mongodb = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+var mongoDB = mongoose.connection;
+mongoDB.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 //on connection 
 mongoose.Promise = require('bluebird');
